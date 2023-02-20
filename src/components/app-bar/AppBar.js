@@ -13,14 +13,11 @@ export default function AppBar ({displayPage,setDisplayPage}) {
     };
 
     const handleCloseNavMenu = (clickedPageName) => {
-        console.log(clickedPageName);
-        const newDisplayPage = produce(displayPage, draft => {
+        setDisplayPage(produce(displayPage, draft => {
             Object.keys(draft).forEach(pageName => {
                 draft[pageName] = clickedPageName === pageName;
             })
-        })
-        console.log(newDisplayPage);
-        setDisplayPage(newDisplayPage)
+        }));
         setAnchorElNav(null);
     };
 
