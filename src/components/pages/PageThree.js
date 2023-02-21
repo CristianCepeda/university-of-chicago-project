@@ -7,8 +7,8 @@ export default function PageThree() {
     return (
         <>
             <Grid container justifyContent={'center'} alignItems={'center'}>
-                <Grid item>
-                    <p>Page three</p>
+                <Grid item sx={{marginTop: '5%'}}>
+                    <iframe style={{height: '50vh', width: '50vw'}} src={"https://ahfarmer.github.io/calculator/"} />
                 </Grid>
             </Grid>
         </>
