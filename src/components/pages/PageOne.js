@@ -1,6 +1,6 @@
 import * as React from "react";
-import {Button, Grid} from "@mui/material";
-import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
+import {Grid} from "@mui/material";
+import BoldCheckBoxButton from "../mui-components/BoldCheckBoxButton";
 
 /*
 - The first page will show a button which disappear when clicked and the text “Hello World!”
@@ -12,9 +12,9 @@ export default function PageOne() {
     return (
         <Grid container justifyContent={'center'}>
             <Grid item sx={{marginTop : 'calc(50vh - 64px)'}}>
-                {displayButton ? <Button sx={{fontWeight: 'bold'}} variant={"contained"} size={"large"} startIcon={<CheckBoxOutlineBlankOutlinedIcon />} onClick={()=>setDisplayButton(false)} >
-                    Click
-                </Button> :<p>Hello World!</p>}
+                {displayButton ? <BoldCheckBoxButton checked={false} onClickFunction={()=>setDisplayButton(false)}>Click</BoldCheckBoxButton> :
+                    <p>Hello World!</p>
+                }
             </Grid>
         </Grid>
     );
