@@ -31,7 +31,7 @@ export default function AppBar ({displayPage,setDisplayPage}) {
                                 variant="h6"
                                 noWrap
                                 component="a"
-                                href="/"
+                                href="https://cristiancepeda.github.io/university-of-chicago-project/"
                                 sx={{
                                     mr: 2,
                                     fontFamily: 'monospace',
@@ -44,7 +44,21 @@ export default function AppBar ({displayPage,setDisplayPage}) {
                                 The University Of Chicago Project
                             </Typography>
                         </Grid>
-                        <Grid item>
+                        <Grid item sx={{ display: { xs: 'none', lg: 'flex' } }}>
+                            {pages.map((page) => (
+                                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
+                                    <Typography textAlign="center" sx={{
+                                        mr: 2,
+                                        fontFamily: 'monospace',
+                                        fontWeight: 700,
+                                        letterSpacing: '.3rem',
+                                        color: 'inherit',
+                                        textDecoration: 'none',
+                                    }}>{page}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Grid>
+                        <Grid item sx={{ display: { xs: 'block', lg: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
